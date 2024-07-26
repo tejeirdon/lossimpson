@@ -1,0 +1,142 @@
+:root{
+    --color1: #f6f6f6;
+    --color2: hsl(0, 0%, 100%);
+    --color3: #F05718;
+    --color4: hsl(13, 68%, 54%);
+    --color5: #F05718;
+    --color6: #080301;
+    --color7: #e40303;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Lexend', Times, serif;
+    background-color: var(--color2);
+    background-image: image();
+}
+header{
+    display: flex;
+    background-color: var(--color5);
+    min-height: 70px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+header a{
+    text-decoration: none;
+    color:var(--color1)
+}
+
+header a.logo{
+    display: flex;
+    align-items: center;
+    
+}
+
+header a.logo img{
+    width: 100px;
+    height: 50px;
+    margin: 25px;
+    
+}
+
+header a.nav-link{
+    margin: 10px;
+    font-size: 20px;
+}
+
+header a.nav-link:hover{
+    color: var(--color7);
+}
+
+.contenedor-imagenes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border: 9px;
+
+}
+
+.contenedor-imagenes .imagen .img{
+    position: relative;
+
+}
+
+.contenedor-imagenes .imagen .img{
+    width:100px;
+    border: #000000 solid 2px;
+}
+
+.contenedor-imagenes .imagen{
+    position:relative;
+    margin-right: -20px;
+    display: inline-flex;
+    flex-direction: column;
+    margin:20px;
+
+    max-height: 100;
+}
+
+.contenedor-imagenes .imagen img{
+    width: 200px;
+    transition: transform 0.5s ease-in-out;
+    filter: drop-shadow(-2px 2px 15px #000000)
+}
+
+.contenedor-imagenes .imagen:hover img {
+    transform: scale(1.4, 1.4);
+}
+
+.contenedor-imagenes .imagen .nombre-personaje{
+    position: absolute;
+    background-color: var(--color3);
+    border-radius: 5px;
+    color: var(--color6);
+    display: none;
+    min-width: 50px;
+    width: 150px;
+    top: -70;
+    padding:10px 15px;
+}
+
+.contenedor-imagenes .imagen .nombre-personaje .texto{
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 150px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.contenedor-imagenes .imagen:hover .nombre-personaje{
+    display: inline-block;
+    transform: translateY(-20px);
+}
+ 
+
+.contenedor-imagenes .imagen .nombre-personaje::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    bottom: -20px;
+    left: 40%;
+    border-top: 10px solid var(--color3);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+@media (max-width: 800px) {
+    header {
+        padding: 10px 0;
+    }
+    .contenedor-imagenes{
+        flex-direction: column;
+        height: 280vh;
+    }
+} 
